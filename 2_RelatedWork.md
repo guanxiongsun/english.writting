@@ -20,4 +20,14 @@ Since the object detection from video task has been introduced at the ImageNet c
 
 ```[DFF]``` In deep feature flow [42] a recognition ConvNet is applied to key frames only and an optical flow ConvNet is used for propagating the deep feature maps via a flow field to the rest of the frames. This approach can increase detection speed by a factor of 5 at a slight accuracy cost. The approach is error-prone due largely to two aspects: First, propagation from the key frame to the current frame can be erroneous and, second, the key frames can miss features from current frames. Very recently a new large-scale dataset for video object detection has been introduced [29] with single objects annotations over video sequences.
 
-  
+# Flow-Guided Feature Aggregation for Video Object Detection
+
+**Object detection in video.** Recently, ImageNet introduces a new challenge for object detection from videos (VID), which brings object detection into the video domain. In this challenge, nearly all of existing methods incorporate temporal information only on the final stage “ boundingbox post-processing”.
+
+```[TCNN]``` T-CNN [18, 19] propagates predicted bounding boxes to neighboring frames according to precomputed optical flows, and then generates tubelets by applying tracking algorithms from high-confidence bounding boxes. Boxes along the tubelets are re-scored based on tubelets classification.
+
+```[Seq-NMS]``` Seq-NMS [12] constructs sequences along nearby high-confidence bounding boxes from consecutive frames. Boxes of the sequence are re-scored to the average confidence, other boxes close to this sequence are suppressed.
+
+Unfortunately, all of these methods are multi-stage pipeline, where results in each stage would rely on the results from previous stages. Thus, it is difficult to correct errors produced by previous stages.
+
+By contrast, our method considers temporal information at the feature level instead of the final box level. The entire system is end-to-end trained for the task of video object detection. Besides, our method can further incorporate such bounding-box post-processing techniques to improve the recognition accuracy.
