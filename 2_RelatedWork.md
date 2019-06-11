@@ -31,3 +31,11 @@ Since the object detection from video task has been introduced at the ImageNet c
 Unfortunately, all of these methods are multi-stage pipeline, where results in each stage would rely on the results from previous stages. Thus, it is difficult to correct errors produced by previous stages.
 
 By contrast, our method considers temporal information at the feature level instead of the final box level. The entire system is end-to-end trained for the task of video object detection. Besides, our method can further incorporate such bounding-box post-processing techniques to improve the recognition accuracy.
+
+# Learning Correspondence from the Cycle-consistency of Time
+
+**Tracking.** Classic approaches to tracking treat it as a matching problem, where the goal is to find a given object/patch in the next frame (see [11] for overview), and the key challenge is to track reliably over extended time periods [57, 79, 1, 27]. Starting with the seminal work of Ramanan et al. [49], researchers largely turned to “tracking as repeated recognition”, where trained object detectors are applied to each frame independently [3, 28, 80, 71, 19, 35, 65]. Our work harks back to the classic tracking-by-matching methods in treating it as a correspondence problem, but uses learning to obtain a robust representation that is able to model wide range of appearance changes.
+
+# Object Guided External Memory Network for Video Object Detection
+
+**Video Object Detection.** The task of video object detection aims to detect every frame of a video. Box level methods [19, 20, 12, 8, 3, 24] optimize the bounding box linkage across multiple frames. T-CNN [19, 20] leverages optical flow to propagate the bounding box across frames and links the bounding box into tubelets with the help of tracking algorithms. Seq-NMS [12] considers all bounding boxes within a video and re-scores them for optimal bounding box linkage. DTTD [8] simultaneously achieves detections and trackings. The frame level detections are linked by across-frame tracklets to provide the final prediction. STL [3] detects on sparse key frames, and propagates the predicted bounding box to non-key frames through motion and scales. DorT [24] combines detection and tracking for efficient detection.
