@@ -20,5 +20,4 @@ Since the object detection from video task has been introduced at the ImageNet c
 
 ```[DFF]``` In deep feature flow [42] a recognition ConvNet is applied to key frames only and an optical flow ConvNet is used for propagating the deep feature maps via a flow field to the rest of the frames. This approach can increase detection speed by a factor of 5 at a slight accuracy cost. The approach is error-prone due largely to two aspects: First, propagation from the key frame to the current frame can be erroneous and, second, the key frames can miss features from current frames. Very recently a new large-scale dataset for video object detection has been introduced [29] with single objects annotations over video sequences.
 
-
-
+  
