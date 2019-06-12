@@ -4,6 +4,10 @@ This repo is used for recording good sentences in classic papers or papers writt
 
 # Update
 
+## 12/06/19
+
+- [Related work - MANet (Post-processing)](2_RelatedWork.md#Fully-Motion-Aware-Network-for-Video-Object-Detection)
+
 ## 11/06/19
 
 - [Related work - D&T](2_RelatedWork.md#detect-to-track-and-track-to-detect)
